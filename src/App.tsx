@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './styles/theme/default'
 import { GlobalStyle } from './styles/global'
 import { Header } from './components/Header'
+import { GithubContextProvider } from './contexts/githubContext'
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       <GlobalStyle />
 
       <Header />
-      <Outlet />
+      <GithubContextProvider>
+        <Outlet />
+      </GithubContextProvider>
     </ThemeProvider>
   )
 }
