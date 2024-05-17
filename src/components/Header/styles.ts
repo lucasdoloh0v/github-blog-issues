@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
+  z-index: -1;
   width: 100vw;
   height: 296px;
 
-  background: ${(props) => props.theme['base-profile']};
+  background: ${(props) => props.theme['base-post']};
 
   position: relative;
 
