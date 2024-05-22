@@ -1,11 +1,13 @@
 import { formatDistanceToNowStrict } from 'date-fns'
 import { ptBR } from 'date-fns/locale/pt-BR'
 import Markdown from 'react-markdown'
+import { useNavigate } from 'react-router-dom'
 
 import { Container, ContainerHeader, TextSummary } from './styles'
 
 interface PostProps {
   post: {
+    number: number
     title: string
     body: string
     createdAt: string
@@ -14,8 +16,14 @@ interface PostProps {
 }
 
 export const Post = ({ post }: PostProps) => {
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate(`/post/${post.number}`)
+  }
+
   return (
-    <Container>
+    <Container onClick={handleNavigate}>
       <ContainerHeader>
         <h3>{post.title}</h3>
         <p>

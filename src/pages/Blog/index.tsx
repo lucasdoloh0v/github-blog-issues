@@ -17,7 +17,7 @@ export const Blog = () => {
       <SearchPost />
       <Posts>
         {posts.map((post) => (
-          <Post key={post.id} post={post} />
+          <Post key={post.number} post={post} />
         ))}
       </Posts>
     </Container>

@@ -18,7 +18,7 @@ interface User {
 }
 
 interface Post {
-  id: number
+  number: number
   title: string
   body: string
   createdAt: string
@@ -46,7 +46,7 @@ interface DataGithubUsersAPI {
 }
 
 interface Item {
-  id: number
+  number: number
   title: string
   body: string
   created_at: string
@@ -104,7 +104,7 @@ export const GithubContextProvider = ({
 
     setPosts(
       data.items.map<Post>((item) => ({
-        id: item.id,
+        number: item.number,
         body: item.body,
         createdAt: item.created_at,
         htmlUrl: item.html_url,
