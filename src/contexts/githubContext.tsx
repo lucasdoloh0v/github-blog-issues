@@ -28,6 +28,7 @@ interface Post {
 interface GitHubContextType {
   user: User
   posts: Post[]
+  getPosts: (query?: string) => Promise<void>
 }
 
 interface GithubContextProviderProps {
@@ -118,7 +119,7 @@ export const GithubContextProvider = ({
   }, [getUser, getPosts])
 
   return (
-    <GithubContext.Provider value={{ user, posts }}>
+    <GithubContext.Provider value={{ user, posts, getPosts }}>
       {children}
     </GithubContext.Provider>
   )
